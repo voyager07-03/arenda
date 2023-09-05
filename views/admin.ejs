@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentAvenueAdmin</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body class="admin">
+    <div class="admin-container">
+        <h1 class="admin-grettings">Добро пожаловать, Админ</h1>
+        <div class="admin-grid">
+            <div class="admin-title">Название:</div>
+            <div class="admin-status">Статус:</div>
+            <% posts.forEach(post => { %>
+            <div class="post-container">
+                <div class="post-name">
+                    <%= post.subtitle %>
+                </div>
+                <div class="admin-control-status">
+                    <div
+                        class="status-info<%= post.status ? ' free' : ' occupied' %>">
+                        <%= post.status ? 'Свободно' : 'Занято' %>
+                    </div>
+                    <button class="status-change"
+                        data-post-id="<%= post.buttonId %>">Изменить</button>
+                </div>
+                <div class="admin-control-buttons">
+                    <button class="admin-edit"
+                        data-post-id="<%= post.buttonId %>">Редактировать</button>
+                    <button class="admin-remove"
+                        data-post-id="<%= post.buttonId %>">Удалить</button>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+        <div class="admin__addButton-wrapper">
+            <button class="admin__addButton">Добавить пост</button>
+        </div>
+        <div class="editModal">
+            <div class="editModal__container">
+                <div class="editModal__cross-wrapper">
+                    <div class="cross__container">
+                        &#10060
+                    </div>
+                </div>
+                <h3 class="editModal__title">Для создания поста заполните
+                    следующие
+                    данные</h3>
+                <form action="/admin/create-post" method="post" id="postForm"
+                    enctype="multipart/form-data">
+                    <div class="editModal__ImgBlock">
+                        <div class="galleryCmp">
+                            <ul class="admin-gallery-list">
+                                <li class="galleryCmp__item gallery--large">
+                                    <img src="#" alt="alt" />
+                                </li>
+                                <li class="galleryCmp__item">
+                                    <img src="#" alt="alt" />
+                                </li>
+                                <li class="galleryCmp__item">
+                                    <img src="#" alt="alt" />
+                                </li>
+                                <li class="galleryCmp__item">
+                                    <img src="#" alt="alt" />
+                                </li>
+                                <li class="galleryCmp__item">
+                                    <img src="#" alt="alt" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="editModal__inputGallery">
+                            <div class="editModal__input">
+                                <label for="mainImg">Выберите изображение для
+                                    превью</label>
+                                <input type="file" name="mainImg" id="mainImg">
+
+                            </div>
+                            <div class="editModal__input">
+                                <label for="otherImg">Выберите оставшиеся
+                                    4 изображения</label>
+                                <input type="file" name="otherImg" id="otherImg"
+                                    multiple>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="editBlock__textBlock">
+                        <div class="editModal__input">
+                            <label class="title" for="title">Введите
+                                заголовок</label>
+                            <input type="text" name="title" id="title"
+                                class="typeText" placeholder="Например Офис">
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title" for="address">Введите
+                                адрес</label>
+                            <input type="text" name="address" id="address"
+                                class="typeText"
+                                placeholder="Например ул. Карла Маркса д.5">
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title"
+                                for="small-description">Добавьте
+                                краткое описание</label>
+                            <input type="text" name="small-description"
+                                id="small-description" class="typeText"
+                                placeholder="Например: Уютный офис в центре города">
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title" for="cost">Установите
+                                цену</label>
+                            <input type="text" name="cost" id="cost"
+                                class="typeText" placeholder="от 113$ до 180$">
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title" for="square">Введите размер
+                                арендуемой площади</label>
+                            <input type="text" name="square" id="square"
+                                class="typeText" placeholder="Например 42.2 м2">
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title" for="conveniences">Перечислите
+                                через запятую имеющиеся удобства</label>
+                            <input type="text" name="conveniences"
+                                id="conveniences" class="typeText"
+                                placeholder="Например: душ, фен, полотенца">
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title"
+                                for="entertainments">Перечислите
+                                через запятую имеющееся оснащение</label>
+                            <input type="text" name="entertainments"
+                                id="entertainments" class="typeText"
+                                placeholder="Например: бесплатный wi-fi, центральное отопление, шкаф">
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title" for="buttonId">Введите id
+                                поста (Только английские буквы или
+                                цифры)</label>
+                            <input type="text" name="buttonId" id="buttonId"
+                                class="typeText"
+                                placeholder="Например office2003">
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title"
+                                for="yardEntertainments">Перечислите
+                                через запятую имеющееся удобства на
+                                территории</label>
+                            <input type="text" name="yardEntertainments"
+                                id="yardEntertainments" class="typeText"
+                                placeholder="Например: парковка, мусорки">
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title"
+                                for="additionalInformation">Добавьте
+                                дополнительное
+                                описание о помещении</label>
+                            <textarea
+                                placeholder="Например: Двухкомнатная квартира с дизайнерским интерьером в итальянском стиле. В квартире есть все необходимое для длительного комфортного проживания от 1 до 4-х человек. Интернет Wi-Fi, телевизор Smart TV, холодильник, СВЧ"
+                                name="additionalInformation"
+                                id="additionalInformation" cols="30"
+                                rows="10"></textarea>
+                        </div>
+                        <div class="editModal__input">
+                            <label class="title" for="mapScript">Вставьте здесь
+                                скрипт местоположения помещения</label>
+                            <textarea id="mapScript" cols="30"
+                                rows="10"></textarea>
+                        </div>
+                    </div>
+                    <h3 class="editBlock__Conveniences-title title">Кликните на
+                        доступные
+                        удобства для добавления графики</h3>
+                    <div class="editBlock__addConveniences">
+                        <div class="editBlock__icon">
+                            <img src="/img/posts/phone.svg" alt="phone">
+                            <div class="editBlock__txt">Телефон</div>
+                        </div>
+                        <div class="editBlock__icon">
+                            <img src="/img/posts/WC.svg" alt="WC">
+                            <div class="editBlock__txt">Туалет</div>
+                        </div>
+                        <div class="editBlock__icon editBlock__icon--small">
+                            <img src="/img/posts/web.svg" alt="web">
+                            <div class="editBlock__txt">Интернет</div>
+                        </div>
+                    </div>
+                    <div class="editModal__input">
+                        <label>
+                            <input type="radio" name="status" value="true"
+                                checked>
+                            Свободно
+                        </label>
+                        <label>
+                            <input type="radio" name="status" value="false">
+                            Занято
+                        </label>
+                    </div>
+
+                    <div class="editBlock__button-block">
+                        <button type="submit">Создать пост</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="/js/admin.js"></script>
+</body>
+
+</html>

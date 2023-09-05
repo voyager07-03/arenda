@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="368" height="335"
+    viewBox="0 0 368 335" fill="none">
+    <defs>
+        <filter id="filter0_d_1_3413" x="0" y="0" width="368" height="335"
+            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha" />
+            <feOffset dy="10" />
+            <feGaussianBlur stdDeviation="10" />
+            <feColorMatrix type="matrix"
+                values="0 0 0 0 0.160784 0 0 0 0 0.160784 0 0 0 0 0.164706 0 0 0 0.07 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix"
+                result="effect1_dropShadow_1_3413" />
+            <feBlend mode="normal" in="SourceGraphic"
+                in2="effect1_dropShadow_1_3413" result="shape" />
+        </filter>
+    </defs>
+    <g filter="url(#filter0_d_1_3413)">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M26 10C22.6863 10 20 12.6863 20 16V286.701C20 290.015 22.6863 292.701 26 292.701H177.223L181.199 303.074C182.183 305.642 185.817 305.642 186.801 303.074L190.777 292.701H342C345.314 292.701 348 290.015 348 286.701V16C348 12.6863 345.314 10 342 10H26Z"
+            fill="white"
+            style="clip-path: polygon(0% 0%, 100% 0%, 100% 93%, 52% 93%, 49% 100%, 46% 93%, 0 93%)" />
+    </g>
+</svg>
