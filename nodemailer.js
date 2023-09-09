@@ -1,23 +1,22 @@
 const nodemailer = require('nodemailer');
 
-const transporter = nodemailer.createTransport(
-    { 
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
-        auth: {
+const transporter = nodemailer.createTransport({
+    service:'Gmail',
+    auth:{
+        type:'OAuth2',
+        user:'rentvenuegomel@gmail.com',
+        accessToken:'ya29.a0AfB_byBI0TNHnfKBT9TelGigEgTdhSo2oZs9JUkEoABW5caxiDysTokq2kjPVrqRXHoZDLUAVh3JtnaayfAzjlW8QEsDwvkQj1TpEp_zMzIDg-9Mhps6Tci0ERyCSP4LfidVH3EJYzSRcWDdCuNYdNHdHoV2tcLaeLk_M9e5aCgYKAeESARMSFQHsvYlsn58_7uvQLc7jwOHjYlhlJA0175',
+        refreshToken:'1//04lvZrR5p3B4ZCgYIARAAGAQSNwF-L9IrH9dZoHMiW8ExlmU-oUdgDOwILMPXP8zeqjHoJEmWh-0nf5fea_Onbthj3oUKQenf0nY',
+        clientId:'510672485378-bhrj62hmqglihpeirrd4n24caklh5sr6.apps.googleusercontent.com',
+        clientSecret:'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',
+        accessUrl:'https://oauth2.googleapis.com/token',
 
-            type:'OAuth2',
-            user: 'rentvenuegomel@gmail.com',
-            accessToken: 'ya29.a0AfB_byBfwc-NtVjgHFA3Q7cvOOKgleTUIm9sbxDQLD_7JY16DQABilXn6HYjyHTTIgvfy9v_y4Dym5GAhAd7JPEVcDzaCtuc4zmJN5JZ_7sFpKJ0Qs22U1MVJT007IfXgh9lfnXTcW_-ezdjX66dyIsGJNiI2BWCSz0CTlXRaCgYKAaESARMSFQHsvYlszByiMC45PCYTk6iVkG7hnQ0175',
-            refreshToken:'1//04ADkqyp7aOqBCgYIARAAGAQSNwF-L9IrSQUNB21-3xwzXUNUv8NW6fJVOQXRzEuDHY2efJtQ7p8laxwEONRcoTzSwRIRAMwWCm4',
-            clientId:'773439170242-t4dj5uaprdp66ro2jnpfdcdq6i1v957i.apps.googleusercontent.com',
-            clientSecret:'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',
-            accessToken:'https://oauth2.googleapis.com/token',
-        }
     }
+},
+{
+    from:'Mailer Test <rentvenuegomel@gmail.com>',
+}
 )
-
 const mailer =  message => {
     transporter.sendMail(message, (err, info) => {
         if(err){

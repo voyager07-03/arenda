@@ -1,4 +1,6 @@
 const Post = require('../PostModels/PostMdl'); 
+const mailer = require('../nodemailer');
+
 
 exports.rendApp= async (req, res) => {
     try {
@@ -25,12 +27,22 @@ exports.rendPost = async(req, res)=>{
 
 
     const post = await Post.findById(postId);
-
-    // Передаем найденный пост в шаблон post.ejs для отрисовки
     res.render('post.ejs', { post, getAltText});
   } catch (error) {
-    // Обработка ошибок, например, если пост не найден
+
     console.error(error);
     res.status(404).send('Пост не найден');
   }
+}
+
+
+exports.sendMail = (req, res)=>{
+  console.log(req.body);
+  const message = {
+      to: 'rentvenuegomel@gmail.com',
+      subject: 'Новая заявка на аренду помещения',
+      text:`Телефон клиента ${req.body.phone}` + ` Имя клиента ${req.body.name}`+ ` Потенциальная дата аренды ${req.body.date}`,
+  }
+  mailer(message);
+  res.redirect('/')
 }

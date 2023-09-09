@@ -18,7 +18,8 @@ require('dotenv').config();
 exports.login = async (req, res) => {
   try {
     const { password } = req.body;
-    const hashedPassword = await bcrypt.hash("FORDMUSTANG", 10); // Здесь генерируется хеш
+    const hashedPasswordFromEnv = process.env.DATABASE_PASSWORD;
+    const hashedPassword = await bcrypt.hash(hashedPasswordFromEnv, 10); // Здесь генерируется хеш
     const posts = await Post.find({});
     bcrypt.compare(password, hashedPassword, (err, result) => {
       if (result) {

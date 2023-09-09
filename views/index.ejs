@@ -258,6 +258,26 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             
                             <% } %>
                         </div>
@@ -663,16 +683,16 @@
                 <div class="form__description">Введите свои контактные данные, а
                     также предположительную дату начала аренды. Мы свяжемся с
                     вами в ближайшее время</div>
-                <form action="#" name="arenda">
+                <form action="/send-mail" name="arenda" method="POST">
                     <div class="input-box"> <input
                             class="form__name input-field" type="text"
-                            name="form__name" id="form__name" data-form-name
+                            name="name" id="form__name" data-form-name
                             placeholder="ФИО"></div>
                     <div class="input-box"> <input type="text" id="input"
-                            class="input-field form__date"></div>
+                            class="input-field form__date" name="date"></div>
                     <div class="input-box"> <input class="form__tel input-field"
-                            type="tel" name="form__tel" id="form__tel"
-                            data-form-tel placeholder="Введите номер телефона">
+                            type="tel" name="phone" id="form__tel" data-form-tel
+                            placeholder="Введите номер телефона">
                     </div> <button type='submit'
                         class="form__button openButton arbtn">Отправить</button>
                 </form>
