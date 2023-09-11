@@ -6,8 +6,14 @@ const port = 4000;
 const adminRoutes = require('./routes/admin-route');
 const appRoutes = require('./routes/app-route')
 const session = require('express-session');
-const bcrypt = require('bcrypt');
-const mailer = require('./nodemailer')
+const mailer = require('./nodemailer');
+const favicon = require('serve-favicon');
+const path = require('path');
+
+
+
+
+
 
 app.use(session({
   secret: 'FORDMUSTANG',
@@ -25,6 +31,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
 
+const faviconPath = path.join(__dirname, 'public', 'favicon', 'logo.ico');
+app.use(favicon(faviconPath));
 
 app.post('/send-mail', (req, res) =>{
   const message = {

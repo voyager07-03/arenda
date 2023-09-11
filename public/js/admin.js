@@ -75,14 +75,8 @@ addPost.addEventListener('click', function(e){
 editButtons.forEach(button => {
     button.addEventListener("click", async () => {
         const postId = button.getAttribute("data-post-id");
-        
-        // Здесь выполните AJAX-запрос для получения данных поста из базы данных
         const response = await fetch(`/admin/api/posts/edit/${postId}`);
         const post = await response.json();
-
-
-
-        // Заполнение полей модального окна данными из базы данных
         editModal.querySelector("#address").value = post.address;
         editModal.querySelector("#title").value = post.title;
         editModal.querySelector("#small-description").value = post.smallDescription;
@@ -96,14 +90,10 @@ editButtons.forEach(button => {
         editModal.querySelector(`#cost`).value = post.cost;
         editModal.querySelector(`#square`).value = post.square;
         editModal.querySelector(`#mapScript`).value = post.mapScript;
-        
-       
- 
-
-        // Открытие модального окна
         editModal.style.display = "block";
     });
 });
+
 
 // Обработчик для закрытия модального окна
 const closeButton = editModal.querySelector(".cross__container");
@@ -151,6 +141,8 @@ closeButton.addEventListener("click", () => {
 const convIcons = []; 
 const convDescrs = [];
 
+
+
 iconContainers.forEach(iconContainer => {
     const iconImg = iconContainer.querySelector('img');
     const iconDescr = iconContainer.querySelector('.editBlock__txt');
@@ -180,19 +172,19 @@ iconContainers.forEach(iconContainer => {
   });
 
 
+
+
+
   function validation(form){
 
     let result = true;
 
     function createError(input, text){
-
       let parent = input.parentNode;
       let spanError = document.createElement('span');
       spanError.textContent = text;
       parent.append(spanError);
       parent.classList.add('error');
-
-
     }
 
 

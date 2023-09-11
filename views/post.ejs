@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RentVenueCenter</title>
     <link rel="stylesheet" href="/css/post.css">
 </head>
 
@@ -65,18 +65,21 @@
                 <div class="header__phone post-title"><a
                         href="tel:+1234567890">8 (800) 500-56-55</a></div>
                 <div class="header__social social"> <a href="#"
-                        class="header__tg"><img src="/img/main/telegram.svg"
-                            alt="tg" /></a> <a href="#" class="header__wa"><img
-                            src="/img/main/whatsapp.svg" alt="whatsapp" /></a>
-                    <a href="#" class="header__vb"><img
-                            src="/img/main/viber.svg" alt="whatsapp" /></a>
+                        class="header__tg"><img loading="lazy" loading="lazy"
+                            src="/img/main/telegram.svg" alt="tg" /></a> <a
+                        href="#" class="header__wa"><img loading="lazy"
+                            loading="lazy" src="/img/main/whatsapp.svg"
+                            alt="whatsapp" /></a>
+                    <a href="#" class="header__vb"><img loading="lazy"
+                            loading="lazy" src="/img/main/viber.svg"
+                            alt="whatsapp" /></a>
                 </div>
             </div>
         </div>
     </header>
     <section class="post">
         <div class="post__container">
-            <div class="post__route post-subtitle"> <a href="/index"
+            <div class="post__route post-subtitle"> <a href="/"
                     class="post__main-link">Главная</a> / <span>
                     <%= post.title %>
                 </span>
@@ -91,6 +94,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="post__slider-img"><img
+                                            loading="lazy" loading="lazy"
                                             src="../<%= post.mainImg %>"
                                             alt="аренда post.title главное изображение" />
                                     </div>
@@ -98,7 +102,8 @@
                                 <% post.images.forEach((image, index) => { %>
                                 <div class="swiper-slide">
                                     <div class="post__slider-img">
-                                        <img src="../<%= image %>"
+                                        <img loading="lazy" loading="lazy"
+                                            src="../<%= image %>"
                                             alt="аренда<%= post.title %><%= post.entertainments[index] || '' %>" />
                                     </div>
                                 </div>
@@ -112,14 +117,16 @@
                             <li
                                 class="gallery__item galleryCmp__item gallery__item--main">
                                 <picture>
-                                    <img src="../<%= post.mainImg %>"
+                                    <img loading="lazy" loading="lazy"
+                                        src="../<%= post.mainImg %>"
                                         alt="аренда post.title главное изображение в галерее">
                                 </picture>
                             </li>
                             <% post.images.forEach((image, index) => { %>
                             <li class="gallery__item galleryCmp__item">
                                 <picture>
-                                    <img src="../<%= image %>"
+                                    <img loading="lazy" loading="lazy"
+                                        src="../<%= image %>"
                                         alt="аренда<%= post.title %><%= post.entertainments[index] || '' %>">
                                 </picture>
                             </li>
@@ -129,6 +136,7 @@
                             <div class="cross"></div>
                             <div class="gallery__wrapper">
                                 <div class="gallery__img galleryCmpImg"> <img
+                                        loading="lazy" loading="lazy"
                                         src="../<%= post.mainImg %>"
                                         alt="galleryImg" />
                                 </div>
@@ -191,13 +199,66 @@
                         <% for (let i = 0; i < advantagesIconArray.length; i++) { %>
                         <div class="post-body__conv-box conv-box">
                             <div class="conv-box__icon">
-                                <img src="..<%= advantagesIconArray[i] %>"
+                                <img loading="lazy" loading="lazy"
+                                    src="..<%= advantagesIconArray[i] %>"
                                     alt="<%= advantagesDescriptionArray[i] %>">
                             </div>
                             <div class="conv-box__description">
                                 <%= advantagesDescriptionArray[i] %>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -291,14 +352,19 @@
                 <h3 class="post-body__map-address post-title">
                     <%= post.address %>
                 </h3>
-                <%= post.mapScript %>
+                <div>
+                    <iframe src='<%= post.mapScript %>'
+                        height="400" width="500px"></iframe>
+                </div>
+
             </div>
         </div>
     </section>
     <div class="decor">
         <div class="decor__img">
             <picture>
-                <img src="../img/decor/decor.jpg" alt="decor" />
+                <img loading="lazy" loading="lazy" src="../img/decor/decor.jpg"
+                    alt="decor" />
 
         </div>
         <div class="decor__text">
@@ -311,6 +377,7 @@
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__logoAndSubtitle"> <a class="footer__logo"><img
+                        loading="lazy" loading="lazy"
                         src="../img/main/logo-tel.svg" alt="logo" /></a>
                 <h4 class="footer__subtitle">Экспресс-подбор жилья по самым
                     низким ценам</h4>
@@ -320,11 +387,14 @@
                 <div class="footer__ctc"> <a href="#"
                         class="footer__tel">Телефон: 8 (800) 500-56-55</a></div>
                 <div class="footer__social social"> <a href="#"
-                        class="footer__tg"><img src="../img/main/telegram.svg"
-                            alt="tg" /></a> <a href="#" class="footer__wa"><img
-                            src="../img/main/whatsapp.svg" alt="whatsapp" /></a>
-                    <a href="#" class="footer__vb"><img
-                            src="../img/main/viber.svg" alt="whatsapp" /></a>
+                        class="footer__tg"><img loading="lazy" loading="lazy"
+                            src="../img/main/telegram.svg" alt="tg" /></a> <a
+                        href="#" class="footer__wa"><img loading="lazy"
+                            loading="lazy" src="../img/main/whatsapp.svg"
+                            alt="whatsapp" /></a>
+                    <a href="#" class="footer__vb"><img loading="lazy"
+                            loading="lazy" src="../img/main/viber.svg"
+                            alt="whatsapp" /></a>
                 </div>
             </div>
             <div class="footer__CR"> © 2023 RentVenueCenter</div>

@@ -17,7 +17,7 @@
             <% posts.forEach(post => { %>
             <div class="post-container">
                 <div class="post-name">
-                    <%= post.subtitle %>
+                    <%= post.title %>
                 </div>
                 <div class="admin-control-status">
                     <div
@@ -166,8 +166,8 @@
                         <div class="editModal__input">
                             <label class="title" for="mapScript">Вставьте здесь
                                 скрипт местоположения помещения</label>
-                            <textarea id="mapScript" cols="30"
-                                rows="10"></textarea>
+                            <textarea id="mapScript" cols="30" rows="10"
+                                name="mapScript"></textarea>
                         </div>
                     </div>
                     <h3 class="editBlock__Conveniences-title title">Кликните на
@@ -180,7 +180,7 @@
                         </div>
                         <div class="editBlock__icon">
                             <img src="/img/posts/WC.svg" alt="WC">
-                            <div class="editBlock__txt">Туалет</div>
+                            <div class="editBlock__txt">Санузел</div>
                         </div>
                         <div class="editBlock__icon editBlock__icon--small">
                             <img src="/img/posts/web.svg" alt="web">
