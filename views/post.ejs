@@ -149,28 +149,30 @@
                         <div class="modal-form__form form">
                             <form action="/send-mail" method="POST"
                                 name="arenda">
-                                <div class="input-box"> <input
+                                <div class="input-box _removeElement"> <input
                                         class="form__name input-field"
                                         type="text" name="name" id="form__name"
                                         data-form-name placeholder="ФИО"></div>
-                                <div class="input-box"> <input type="text"
-                                        id="input-date"
+                                <div class="input-box _removeElement"> <input
+                                        type="text" id="input-date"
                                         class="input-field form__date"
                                         name="date">
                                 </div>
-                                <div class="input-box input-box--last"> <input
-                                        class="form__tel input-field" type="tel"
-                                        name="phone" id="form__tel"
+                                <div
+                                    class="input-box input-box--last _removeElement">
+                                    <input class="form__tel input-field"
+                                        type="tel" name="phone" id="form__tel"
                                         data-form-tel
                                         placeholder="Введите номер телефона">
                                 </div>
-                                <div class="post__cost post-subtitle">
+                                <div
+                                    class="post__cost post-subtitle _removeElement">
                                     <div class="post__price">Цена:</div>
                                     <div class="post__price">
                                         <%= post.cost %>
                                     </div>
                                 </div> <button type='submit'
-                                    class="form__button openButton arbtn">Отправить
+                                    class="form__button openButton arbtn _removeElement">Отправить
                                     заявку</button>
                                 <p class="post__text post-text "> Оставьте ваши
                                     контактные данные и выберите приблизительную
@@ -230,70 +232,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         
                         <% } %>
                         <div class="post-body__conv-box conv-box">
@@ -306,7 +244,7 @@
 
                 <div class="post-body__description">
                     <div class="post-body__description-title post-title">
-                        Описание</div>
+                        О помещении</div>
                     <div class="post-body__small-description post-subtitle">
                         <%= post.smallDescription %>
                     </div>
@@ -314,7 +252,8 @@
                         <div class="post-body__conveniences">
                             <h3
                                 class="post-body__conveniences-title post-title">
-                                Оснащение</h3>
+                                Основные преимущества
+                            </h3>
                             <ul>
                                 <% post.conveniences.forEach((conv) => { %>
                                 <li class="conveniences__item post-text">
@@ -368,9 +307,9 @@
 
         </div>
         <div class="decor__text">
-            <h3 class="decor__title">Нам доверяют около 100 компаний команд и ИП
+            <h3 class="decor__title">Нам доверяют более 100 юридических лиц и ИП
             </h3>
-            <div class="decor__subtitle"> Мы очень ценим наших арендаторов И
+            <div class="decor__subtitle"> Мы очень ценим наших арендаторов и
                 всегда рады сотрудничеству</div>
         </div>
     </div>
